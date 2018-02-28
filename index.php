@@ -9,6 +9,8 @@ ob_start();
 $strings_array = ['one', 'two', 'three', 'four', 'five'];
 $int_array = [12, 45, 53, 45];
 $arit_operator = "/";
+$str = "abracadacarba gdfs";
+$answer_5_1 = task5_1($str);
 
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
@@ -33,6 +35,12 @@ echo "<div class='jumbotron'>";
 task4(10, 6);
 echo "</div>";
 // конец вывода четвертого задания
+
+// начало вывода пятого задания
+echo "<div class='jumbotron'>";
+task5_2($answer_5_1, $str);
+echo "</div>";
+// конец вывода пятого задания
 
 
 $content = ob_get_contents();

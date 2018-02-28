@@ -11,6 +11,11 @@ $intArray = [12, 45, 53, 45];
 $aritOperator = "/";
 $str = "abracadacarba gdfs";
 $answer_5_1 = task5_1($str);
+$unixTime = "24.02.2016 00:00:00";
+$text1 = "Карл у Клары украл Кораллы";
+$text2 = "Две бутылки лимонада";
+$path = "./test.txt";
+
 
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
@@ -20,7 +25,7 @@ echo "</div>";
 
 // начало вывода второго задания
 echo "<div class='jumbotron'>";
-task2($int_array, $arit_operator);
+task2($intArray, $aritOperator);
 echo "</div>";
 // конец вывода второго задания
 
@@ -42,6 +47,29 @@ task5_2($answer_5_1, $str);
 echo "</div>";
 // конец вывода пятого задания
 
+// начало вывода шестого задания
+echo "<div class='jumbotron'>";
+task6($unixTime);
+echo "</div>";
+// конец вывода шестого задания
+
+// начало вывода седбмого задания
+echo "<div class='jumbotron'>";
+task7($text1, $text2);
+echo "</div>";
+// конец вывода седьмого задания
+
+// начало вывода восьмого задания
+echo "<div class='jumbotron'>";
+task8($path);
+echo "</div>";
+// конец вывода восьмого задания
+
+// начало вывода девятого задания
+echo "<div class='jumbotron'>";
+task9();
+echo "</div>";
+// конец вывода девятого задания
 
 $content = ob_get_contents();
 ob_end_clean();

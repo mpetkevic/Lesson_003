@@ -114,22 +114,36 @@ function task5_2($answer, $str)
     }
 }
 
-function task6()
+function task6($unixTime)
 {
-    // TODO:
+    echo "Now date and time: " . date('d.m.Y') . " " . date('h:m') . "<br>";
+    $unix = new DateTime($unixTime);
+    $display_unix = $unix->getTimestamp();
+    //var_dump($unix->getTimestamp());
+    echo "Unix time of " . $unixTime . " is: " . $display_unix;
 }
 
-function task7()
+function task7($text1, $text2)
 {
-    // TODO:
+    $newText1 = str_replace("К", "", $text1);
+    echo $newText1 . "<br>";
+    $newText2 = str_replace("Две", "Три", $text2);
+    echo $newText2;
 }
 
-function task8()
+function task8($path)
 {
-    // TODO:
+    $handle = fopen($path, "r");
+    $text = fread($handle, 1024);
+    fwrite($handle, $text);
+    fclose($handle);
+    echo $text;
 }
 
 function task9()
 {
-    // TODO:
+    $handle = fopen("./anothertest.txt", "a");
+    $text = "Hello world!";
+    fclose($handle);
+
 }

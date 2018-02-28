@@ -6,9 +6,11 @@ require_once('functions.php');
 // Магия которая пригодится в жизни
 ob_start();
 
+$strings_array = ['one', 'two', 'three', 'four', 'five'];
+
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
-task1();
+task1($strings_array, true);
 echo "</div>";
 // конец вывода первого задания
 

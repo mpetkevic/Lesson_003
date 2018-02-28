@@ -135,7 +135,7 @@ function task8($path)
 {
     $handle = fopen($path, "r");
     $text = fread($handle, 1024);
-    fwrite($handle, $text);
+
     fclose($handle);
     echo $text;
 }
@@ -144,6 +144,7 @@ function task9()
 {
     $handle = fopen("./anothertest.txt", "a");
     $text = "Hello world!";
+    fwrite($handle, $text);
     fclose($handle);
 
 }

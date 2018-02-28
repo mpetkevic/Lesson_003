@@ -7,20 +7,28 @@ require_once('functions.php');
 ob_start();
 
 $strings_array = ['one', 'two', 'three', 'four', 'five'];
+$int_array = [12, 45, 53, 45];
+$arit_operator = "/";
 
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
-task1($strings_array, true);
+task1($strings_array);
 echo "</div>";
 // конец вывода первого задания
 
 // начало вывода второго задания
 echo "<div class='jumbotron'>";
-task2();
+task2($int_array, $arit_operator);
 echo "</div>";
 // конец вывода второго задания
 
-// ...
+// начало вывода третего задания
+echo "<div class='jumbotron'>";
+task3("/", 4, 5, 6, 7);
+echo "</div>";
+// конец вывода третего задания
+
+
 
 $content = ob_get_contents();
 ob_end_clean();

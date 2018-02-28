@@ -1,47 +1,49 @@
 <?php
 
-function task1($param1, $param2 = false)
+function task1($parameters)
 {
-    if($param2) {
-        $str = implode(' ', $param1);
+    $data = func_get_args();
+    if (count($data) > 1 && $data[1] == 1 ) {
+        $str = implode(' ', $data[0]);
         return $str;
     } else {
-        for($string_nr = 0; $string_nr < count($param1); $string_nr++) {
-            echo "<p>" . $param1[$string_nr] . "</p>";
+        foreach ($data[0] as $item) {
+            echo "<p>" . $item . "</p>";
         }
     }
+
 }
 
 
-function task2($param1, $param2)
+function task2($intArray, $operator)
 {
 
-    switch ($param2) {
-        case($param2 == "+"):
+    switch ($operator) {
+        case("+"):
             $result = 0;
-            for($array_el = 0; $array_el < count($param1); $array_el++) {
-                $result += $param1[$array_el];
+            for($array_el = 0; $array_el < count($intArray); $array_el++) {
+                $result += $intArray[$array_el];
             }
             echo $result;
             break;
-        case($param2 == "-"):
+        case("-"):
             $result = 0;
-            for($array_el = 0; $array_el < count($param1); $array_el++) {
-                $result -= $param1[$array_el];
+            for($array_el = 0; $array_el < count($intArray); $array_el++) {
+                $result -= $intArray[$array_el];
             }
             echo $result;
             break;
-        case($param2 == "*"):
+        case("*"):
             $result = 1;
-            for($array_el = 0; $array_el < count($param1); $array_el++) {
-                $result *= $param1[$array_el];
+            for($array_el = 0; $array_el < count($intArray); $array_el++) {
+                $result *= $intArray[$array_el];
             }
             echo $result;
             break;
-        case($param2 == "/"):
-            $result = $param1[0] * $param1[0];
-            for($array_el = 0; $array_el < count($param1); $array_el++) {
-                $result /= $param1[$array_el];
+        case("/"):
+            $result = $intArray[0] * $intArray[0];
+            for($array_el = 0; $array_el < count($intArray); $array_el++) {
+                $result /= $intArray[$array_el];
             }
             echo $result;
             break;
@@ -59,13 +61,13 @@ function task3($parameters)
     task2($data, $operator);
 }
 
-function task4($rows_count, $cols_count)
+function task4($rowsCount, $colsCount)
 {
-    if(is_int($rows_count) && is_int($cols_count)) {
+    if(is_int($rowsCount) && is_int($colsCount)) {
         echo "<table border='1'>";
-        for ($row = 1; $row <= $rows_count; $row++) {
+        for ($row = 1; $row <= $rowsCount; $row++) {
             echo "<tr>";
-            for ($col = 1; $col <= $cols_count; $col++) {
+            for ($col = 1; $col <= $colsCount; $col++) {
                 echo "<td>" . $result = $row * $col . "</td>";
             }
             echo "</tr>";
@@ -91,11 +93,8 @@ function task5_1($str)
         $start = 0;
         $end = -1;
         if ($new_str2[$start] == $new_str2[$end]) {
-
             $from_start = substr($new_str2, 1);
-
             $from_end = substr_replace($from_start, "", -1);
-
             return task5_1($from_end);
 
 

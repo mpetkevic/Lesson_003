@@ -7,14 +7,14 @@ require_once('functions.php');
 ob_start();
 
 $strings_array = ['one', 'two', 'three', 'four', 'five'];
-$int_array = [12, 45, 53, 45];
-$arit_operator = "/";
+$intArray = [12, 45, 53, 45];
+$aritOperator = "/";
 $str = "abracadacarba gdfs";
 $answer_5_1 = task5_1($str);
 
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
-task1($strings_array);
+task1($strings_array, true);
 echo "</div>";
 // конец вывода первого задания
 

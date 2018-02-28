@@ -59,9 +59,21 @@ function task3($parameters)
     task2($data, $operator);
 }
 
-function task4()
+function task4($rows_count, $cols_count)
 {
-    // TODO:
+    if(is_int($rows_count) && is_int($cols_count)) {
+        echo "<table border='1'>";
+        for ($row = 1; $row <= $rows_count; $row++) {
+            echo "<tr>";
+            for ($col = 1; $col <= $cols_count; $col++) {
+                echo "<td>" . $result = $row * $col . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "Введите целые числа";
+    }
 }
 
 function task5()

@@ -6,7 +6,7 @@ require_once('functions.php');
 // Магия которая пригодится в жизни
 ob_start();
 
-$strings_array = ['one', 'two', 'three', 'four', 'five'];
+$stringsArray = ['one', 'two', 'three', 'four', 'five'];
 $intArray = [12, 45, 53, 45];
 $aritOperator = "/";
 $str = "abracadacarba gdfs";
@@ -19,7 +19,7 @@ $path = "./test.txt";
 
 // начало вывода первого задания
 echo "<div class='jumbotron'>";
-task1($strings_array, true);
+task1($stringsArray);
 echo "</div>";
 // конец вывода первого задания
 

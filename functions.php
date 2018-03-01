@@ -1,13 +1,12 @@
 <?php
 
-function task1($parameters)
+function task1($arrayString, $flag = false)
 {
-    $data = func_get_args();
-    if (count($data) > 1 && $data[1] == 1 ) {
-        $str = implode(' ', $data[0]);
+    if ($flag == true) {
+        $str = implode(' ', $arrayString);
         return $str;
     } else {
-        foreach ($data[0] as $item) {
+        foreach ($arrayString as $item) {
             echo "<p>" . $item . "</p>";
         }
     }
@@ -17,40 +16,39 @@ function task1($parameters)
 
 function task2($intArray, $operator)
 {
-
+    $result = $intArray[0];
+    unset($intArray[0]);
     switch ($operator) {
         case("+"):
-            $result = 0;
-            for($array_el = 0; $array_el < count($intArray); $array_el++) {
-                $result += $intArray[$array_el];
+            foreach ($intArray as $item) {
+                $result += $item;
             }
-            echo $result;
             break;
         case("-"):
-            $result = 0;
-            for($array_el = 0; $array_el < count($intArray); $array_el++) {
-                $result -= $intArray[$array_el];
+            foreach ($intArray as $item) {
+                $result -= $item;
             }
-            echo $result;
             break;
         case("*"):
-            $result = 1;
-            for($array_el = 0; $array_el < count($intArray); $array_el++) {
-                $result *= $intArray[$array_el];
+            foreach ($intArray as $item) {
+                $result *= $item;
             }
-            echo $result;
             break;
         case("/"):
-            $result = $intArray[0] * $intArray[0];
-            for($array_el = 0; $array_el < count($intArray); $array_el++) {
-                $result /= $intArray[$array_el];
+            foreach ($intArray as $item) {
+                $result /= $item;
             }
-            echo $result;
+            break;
+        case("%"):
+            foreach ($intArray as $item) {
+                $result %= $item;
+            }
             break;
         default:
             echo "Неправельные данные";
             break;
     }
+    echo $result;
 }
 
 function task3($parameters)
@@ -75,6 +73,10 @@ function task4($rowsCount, $colsCount)
         echo "</table>";
     } else {
         echo "Введите целые числа";
+    }
+
+    if($rowsCount >1) {
+        task4($rowsCount -1, $colsCount -1);
     }
 }
 

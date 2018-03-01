@@ -53,8 +53,7 @@ function task2($intArray, $operator)
 function task3($parameters)
 {
     $data = func_get_args();
-    $operator = $data[0];
-    array_shift($data);
+    $operator = array_shift($data);
     task2($data, $operator);
 }
 
@@ -89,14 +88,14 @@ function task5_1($str)
         return true;
     } else {
 
-        $new_str = str_replace(" ", "", $str);
-        $new_str2 = strtolower($new_str);
+        $newStr = str_replace(" ", "", $str);
+        $newStr2 = strtolower($newStr);
         $start = 0;
         $end = -1;
-        if ($new_str2[$start] == $new_str2[$end]) {
-            $from_start = substr($new_str2, 1);
-            $from_end = substr_replace($from_start, "", -1);
-            return task5_1($from_end);
+        if ($newStr2[$start] == $newStr2[$end]) {
+            $fromStart = substr($newStr2, 1);
+            $fromEnd = substr_replace($fromStart, "", -1);
+            return task5_1($fromEnd);
 
 
         } else {
@@ -119,9 +118,9 @@ function task6($unixTime)
 {
     echo "Now date and time: " . date('d.m.Y') . " " . date('h:m') . "<br>";
     $unix = new DateTime($unixTime);
-    $display_unix = $unix->getTimestamp();
+    $displayUnix = $unix->getTimestamp();
     //var_dump($unix->getTimestamp());
-    echo "Unix time of " . $unixTime . " is: " . $display_unix;
+    echo "Unix time of " . $unixTime . " is: " . $displayUnix;
 }
 
 function task7($text1, $text2)

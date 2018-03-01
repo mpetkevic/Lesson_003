@@ -45,7 +45,6 @@ function task2($intArray, $operator)
             break;
         default:
             echo "Неправельные данные";
-            break;
     }
     echo $result;
 }

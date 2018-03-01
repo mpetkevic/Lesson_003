@@ -2,13 +2,12 @@
 
 function task1($arrayString, $flag = false)
 {
+    foreach ($arrayString as $item) {
+        echo "<p>" . $item . "</p>";
+    }
     if ($flag == true) {
         $str = implode(' ', $arrayString);
         return $str;
-    } else {
-        foreach ($arrayString as $item) {
-            echo "<p>" . $item . "</p>";
-        }
     }
 
 }

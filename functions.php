@@ -132,18 +132,20 @@ function task7($text1, $text2)
 
 function task8($path)
 {
-    $handle = fopen($path, "r");
-    $text = fread($handle, 1024);
-
-    fclose($handle);
-    echo $text;
+//    $handle = fopen($path, "r");
+//    $text = fread($handle, 1024);
+//
+//    fclose($handle);
+//    echo $text;
+    $content = file_get_contents("test.txt");
+    echo $content;
 }
 
 function task9()
 {
-    $handle = fopen("./anothertest.txt", "a");
+//    $handle = fopen("./anothertest.txt", "a");
     $text = "Hello world!";
-    fwrite($handle, $text);
-    fclose($handle);
-
+//    fwrite($handle, $text);
+//    fclose($handle);
+    file_put_contents("anothertest.txt",$text,FILE_APPEND);
 }
